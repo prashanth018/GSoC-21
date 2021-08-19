@@ -19,6 +19,13 @@ This article summaries the work I did during my summer as being a participant of
 3. [Sparse-Dense Matrix Multiplication](https://github.com/chapel-lang/chapel/pull/18152)
 
 #### Yet to merge:
-1. [External account custom profile field](https://github.com/chapel-lang/chapel/pull/18149)
+1. [one-norm estimate and Tests](https://github.com/chapel-lang/chapel/pull/18149)
 2. [Action method]()
 3. [Action method tests]()
+
+#### Issues created/discovered:
+1. [oneNormEst method should support matrices with eltType=complex](https://github.com/chapel-lang/chapel/issues/18158)
+2. [Efficient way to handle Sparse matrix inputs for Matrix Exponentials](https://github.com/chapel-lang/chapel/issues/18157)
+3. [Functionality to Multiply a Sparse and a Dense Matrix](https://github.com/chapel-lang/chapel/issues/18092)
+4. [Addition of NumPy like methods in Linear Algebra module](https://github.com/chapel-lang/chapel/issues/18091)
+5. [Handling array views correctly in the LinearAlgebra module](https://github.com/chapel-lang/chapel/issues/18159)
