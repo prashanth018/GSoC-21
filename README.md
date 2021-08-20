@@ -32,9 +32,17 @@ This article summaries the work I did during my summer as being a participant of
 
 ## Description
 
+### Background
+
+Ideally, exponential of matrix is just an application of taylor series expansion of exponential to a matrix. We could have gotten away by just plugging-in matrix in the taylor series expansion of exponentials. This taylor series expansion requires us to take powers of input matrix i.e., A^2,A^4,A^6,A^8,A^10.
+  
+Optimization Question: Do we need to take all the above specified matrix powers? Can we trade off some precision? Can we improve performance by caching the results?
+  
+Research: There is a paper by Awad H. Al-Mohy which introduces exactDs and approxDs a.k.a D values of a Matrix. ExactDs are computed using exact onenorms and ApproxDs are computed using estimate of onenorms. This paper finds a relation between the D values of a matrix and the precision. Something like, if max of D4 and D6 doesn't exceed 1.495585 then we can get away by only computing pade3 which internally computes only A^2,A^4. We also make use of Lazy computation and caching of matrices. ExpmPadeHelper class helps us achieve all of this.
+
 ### Matrix exponentiation using Scaling and Squaring Algorithm
-PR: [#17523](https://github.com/chapel-lang/chapel/pull/17523)
-This PR incorporates the implementation of expm method which takes in a Square Matrix A as an input and returns the exponential of the Matrix. Input matrix can be of any data type. This PR also incorporates the cosm and sinm functionality which returns the cos and sin of the input matrix respectively. This PR includes sincos functionality which just calls sinm and cosm internally and returns the sin and cos of a Matrix. This PR also includes tests for the expm, sinm and cosm tested over various input matrices like: Gradient Matrix, Edge Detection Matrix, Identity Matrix and various other forms of Matrices over various other data types.  
+PR: [#17523](https://github.com/chapel-lang/chapel/pull/17523) <br>
+This PR incorporates the implementation of expm method which takes in a Square Matrix A as an input and returns the exponential of the Matrix. Input matrix can be of any data type. This PR also incorporates the cosm and sinm functionality which returns the cos and sin of the input matrix respectively. This PR includes sincos functionality which just calls sinm and cosm internally and returns the sin and cos of a Matrix. This PR also includes tests for the expm, sinm and cosm tested over various input matrices like: Gradient Matrix, Edge Detection Matrix, Identity Matrix and various other forms of Matrices over various other data types. This PR especially incorporates [ExpmPadeHelper](https://github.com/prashanth018/GSoC-21/blob/main/README.md#background) class which is the crux of expm.
 
 ### Matrix Exponentials - Performance & LAPACK based solvePQ
 PR: [#17966](https://github.com/chapel-lang/chapel/pull/17966)
