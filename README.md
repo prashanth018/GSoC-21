@@ -34,6 +34,7 @@ This article summaries the work I did during my summer as being a participant of
 
 ### Matrix exponentiation using Scaling and Squaring Algorithm
 PR: [#17523](https://github.com/chapel-lang/chapel/pull/17523)
+This PR incorporates the implementation of expm method which takes in a Square Matrix A as an input and returns the exponential of the Matrix. Input matrix can be of any data type. This PR also incorporates the cosm and sinm functionality which returns the cos and sin of the input matrix respectively. This PR includes sincos functionality which just calls sinm and cosm internally and returns the sin and cos of a Matrix. This PR also includes tests for the expm, sinm and cosm tested over various input matrices like: Gradient Matrix, Edge Detection Matrix, Identity Matrix and various other forms of Matrices over various other data types.  
 
 ### Matrix Exponentials - Performance & LAPACK based solvePQ
 PR: [#17966](https://github.com/chapel-lang/chapel/pull/17966)
