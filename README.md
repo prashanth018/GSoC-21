@@ -29,3 +29,28 @@ This article summaries the work I did during my summer as being a participant of
 3. [Functionality to Multiply a Sparse and a Dense Matrix](https://github.com/chapel-lang/chapel/issues/18092)
 4. [Addition of NumPy like methods in Linear Algebra module](https://github.com/chapel-lang/chapel/issues/18091)
 5. [Handling array views correctly in the LinearAlgebra module](https://github.com/chapel-lang/chapel/issues/18159)
+6. [Add LAPACK implementation for solve method in LinearAlgebra module](https://github.com/chapel-lang/chapel/issues/17912)
+
+
+## Description
+
+### Matrix exponentiation using Scaling and Squaring Algorithm
+
+### Matrix Exponentials - Performance & LAPACK based solvePQ
+
+### Sparse-Dense Matrix Multiplication
+
+### one-norm estimate and Tests
+
+### Action method and Test
+
+## Miscellaneous
+
+#### PRs
+1. [Adding checksumming to mason](https://github.com/chapel-lang/chapel/pull/17380)
+2. [Changes to choice method of Random module to support sampling on N-Dimensions](https://github.com/chapel-lang/chapel/pull/17168)
+3. [Functionality to Multiply a Sparse and a Dense Matrix](https://github.com/chapel-lang/chapel/issues/18092)
+4. [Chpldoc not properly generated for few usecases](https://github.com/chapel-lang/chapel/pull/17058)
+
+#### Issues
+1. [Make Random.choice() method support multi-dimensional array](https://github.com/chapel-lang/chapel/issues/17136)
