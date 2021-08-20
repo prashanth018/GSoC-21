@@ -14,14 +14,13 @@ This article summaries the work I did during my summer as being a participant of
 [Here](https://github.com/chapel-lang/chapel/commits?author=prashanth018&since=2021-04-01&until=2021-08-31) is the list of commits that I have made relevant to this Project. You can also find my Project Proposal [here](https://github.com/prashanth018/GSoC-21/blob/main/Matrix%20Exponentials%20Proposal.pdf).
 
 #### What's merged:
-1. [Matrix exponentiation using Scaling and Squaring Algorithm](https://github.com/chapel-lang/chapel/pull/17523)
-2. [Matrix Exponentials - Performance & LAPACK based solvePQ](https://github.com/chapel-lang/chapel/pull/17966)
-3. [Sparse-Dense Matrix Multiplication](https://github.com/chapel-lang/chapel/pull/18152)
+1. [Matrix exponentiation using Scaling and Squaring Algorithm](https://github.com/prashanth018/GSoC-21/blob/main/README.md#matrix-exponentiation-using-scaling-and-squaring-algorithm)
+2. [Matrix Exponentials - Performance & LAPACK based solvePQ](https://github.com/prashanth018/GSoC-21/blob/main/README.md#matrix-exponentials---performance--lapack-based-solvepq)
+3. [Sparse-Dense Matrix Multiplication](https://github.com/prashanth018/GSoC-21/blob/main/README.md#sparse-dense-matrix-multiplication)
 
 #### Yet to merge:
-1. [one-norm estimate and Tests](https://github.com/chapel-lang/chapel/pull/18149)
-2. [Action method]()
-3. [Action method tests]()
+1. [one-norm estimate & Tests](https://github.com/prashanth018/GSoC-21/blob/main/README.md#one-norm-estimate-and-tests)
+2. [Action method & Tests](https://github.com/prashanth018/GSoC-21/blob/main/README.md#action-method-and-test)
 
 #### Issues created/discovered:
 1. [oneNormEst method should support matrices with eltType=complex](https://github.com/chapel-lang/chapel/issues/18158)
@@ -31,18 +30,22 @@ This article summaries the work I did during my summer as being a participant of
 5. [Handling array views correctly in the LinearAlgebra module](https://github.com/chapel-lang/chapel/issues/18159)
 6. [Add LAPACK implementation for solve method in LinearAlgebra module](https://github.com/chapel-lang/chapel/issues/17912)
 
-
 ## Description
 
 ### Matrix exponentiation using Scaling and Squaring Algorithm
+PR: [#17523](https://github.com/chapel-lang/chapel/pull/17523)
 
 ### Matrix Exponentials - Performance & LAPACK based solvePQ
+PR: [#17966](https://github.com/chapel-lang/chapel/pull/17966)
 
 ### Sparse-Dense Matrix Multiplication
+PR: [#18152](https://github.com/chapel-lang/chapel/pull/18152)
 
 ### one-norm estimate and Tests
+PR: [#18149](https://github.com/chapel-lang/chapel/pull/18149)
 
 ### Action method and Test
+PR: 
 
 ## Miscellaneous
 
