@@ -49,8 +49,7 @@ This article summaries the work I did during my summer as being a participant of
 #### PRs
 1. [Adding checksumming to mason](https://github.com/chapel-lang/chapel/pull/17380)
 2. [Changes to choice method of Random module to support sampling on N-Dimensions](https://github.com/chapel-lang/chapel/pull/17168)
-3. [Functionality to Multiply a Sparse and a Dense Matrix](https://github.com/chapel-lang/chapel/issues/18092)
-4. [Chpldoc not properly generated for few usecases](https://github.com/chapel-lang/chapel/pull/17058)
+3. [Chpldoc not properly generated for few usecases](https://github.com/chapel-lang/chapel/pull/17058)
 
 #### Issues
 1. [Make Random.choice() method support multi-dimensional array](https://github.com/chapel-lang/chapel/issues/17136)
