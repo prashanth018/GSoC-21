@@ -34,24 +34,27 @@ This article summaries the work I did during my summer as being a participant of
 
 ### Background
 
-Ideally, exponential of matrix is just an application of taylor series expansion of exponential to a matrix. We could have gotten away by just plugging-in matrix in the taylor series expansion of exponentials. This taylor series expansion requires us to take powers of input matrix i.e., A^2,A^4,A^6,A^8,A^10.
+Ideally, exponential of matrix is just an application of taylor series expansion of exponential to a matrix. We could have gotten away by just plugging-in matrix in the taylor series expansion of exponentials. This taylor series expansion requires us to take powers of input matrix i.e., _A^2,A^4,A^6,A^8,A^10_.
   
-Optimization Question: Do we need to take all the above specified matrix powers? Can we trade off some precision? Can we improve performance by caching the results?
+**Optimization Question**: Do we need to take all the above specified matrix powers? Can we trade off some precision? Can we improve performance by caching the results?
   
-Research: There is a paper by Awad H. Al-Mohy which introduces exactDs and approxDs a.k.a D values of a Matrix. ExactDs are computed using exact onenorms and ApproxDs are computed using estimate of onenorms. This paper finds a relation between the D values of a matrix and the precision. Something like, if max of D4 and D6 doesn't exceed 1.495585 then we can get away by only computing pade3 which internally computes only A^2,A^4. We also make use of Lazy computation and caching of matrices. ExpmPadeHelper class helps us achieve all of this.
+**Research**: There is a [paper](https://epubs.siam.org/doi/abs/10.1137/09074721X) by Awad H. Al-Mohy which introduces _exactDs_ and _approxDs_ a.k.a D values of a Matrix. _exactDs_ are computed using exact onenorms and _approxDs_ are computed using estimate of onenorms. This paper finds a relation between the D values of a matrix and the precision. Something like, if max of _D4_ and _D6_ doesn't exceed _1.495585_ then we can get away by only computing _pade3_ which internally computes only _A^2,A^4_. We also make use of Lazy computation and caching of matrices. ExpmPadeHelper class helps us achieve all of this.
 
 ### Matrix exponentiation using Scaling and Squaring Algorithm
 PR: [#17523](https://github.com/chapel-lang/chapel/pull/17523) <br>
-This PR incorporates the implementation of expm method which takes in a Square Matrix A as an input and returns the exponential of the Matrix. Input matrix can be of any data type. This PR also incorporates the cosm and sinm functionality which returns the cos and sin of the input matrix respectively. This PR includes sincos functionality which just calls sinm and cosm internally and returns the sin and cos of a Matrix. This PR also includes tests for the expm, sinm and cosm tested over various input matrices like: Gradient Matrix, Edge Detection Matrix, Identity Matrix and various other forms of Matrices over various other data types. This PR especially incorporates [ExpmPadeHelper](https://github.com/prashanth018/GSoC-21/blob/main/README.md#background) class which is the crux of expm.
+This PR incorporates the implementation of expm method which takes in a Square Matrix _A_ as an input and returns the exponential of the Matrix. Input matrix can be of any data type. This PR also incorporates the _cosm_ and _sinm_ functionality which returns the cos and sin of the input matrix respectively. This PR includes _sincos_ functionality which just calls _sinm_ and _cosm_ internally and returns the sin and cos of a Matrix. This PR also includes tests for the _expm_, _sinm_ and _cosm_, _sincos_ tested over various input matrices like: Gradient Matrix, Edge Detection Matrix, Identity Matrix and various other forms of Matrices over various other data types. This PR especially incorporates [ExpmPadeHelper](https://github.com/prashanth018/GSoC-21/blob/main/README.md#background) class which is the crux of expm.
 
 ### Matrix Exponentials - Performance & LAPACK based solvePQ
-PR: [#17966](https://github.com/chapel-lang/chapel/pull/17966)
+PR: [#17966](https://github.com/chapel-lang/chapel/pull/17966) <br>
+Calculation of exponential of a Matrix would eventually require a system of Linear Equations to be solved. This PR optimizes the usage of native solve method and this PR also adds functionality to use _LAPACK.gesv_ which is a Lapack routine to solve system of linear equations. This PR also adds the performance tests for _expm_, _sinm_, _cosm_, _sincos_.
 
 ### Sparse-Dense Matrix Multiplication
-PR: [#18152](https://github.com/chapel-lang/chapel/pull/18152)
+PR: [#18152](https://github.com/chapel-lang/chapel/pull/18152) <br>
+Chapel doesn't allow the multiplication of a Sparse and a Dense Matrix. This PR incorporates a method _sparseDenseMatmut_ to carry out that functionality. _dot_ method in Chapel now supports product of a Sparse and a Dense Matrix. This PR also includes tests for this method.
 
 ### one-norm estimate and Tests
-PR: [#18149](https://github.com/chapel-lang/chapel/pull/18149)
+PR: [#18149](https://github.com/chapel-lang/chapel/pull/18149) <br>
+This PR includes functionality to estimate the onenorms of a Matrix. The function _oneNormEst_ does this and can be used as an alternative to _norm_ function. _norm_ function runs in O(n^2) time while, _oneNormEst_ takes O(k.N) time. This PR also includes many helper functions such as _absSum_, _maxAlongAxis_, _ones_, _zeros_, _elementaryVector_, _argsort_, _everyColOfXParallelToColOfY_, _signRoundUp_, _columnNeedsResampling_, _columnResample_, _sparseDenseMatmul_, _getDense_ which are all private methods and aid the functionality of _oneNormEst_ method. Besides, this PR incorporates major refactoring of ExpmPadeHelper class, making it modular and readable. This PR also includes documentation wherever required and includes tests for Sparse matrices.
 
 ### Action method and Test
 PR: 
