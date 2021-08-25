@@ -57,8 +57,7 @@ PR: [#18149](https://github.com/chapel-lang/chapel/pull/18149) <br>
 This PR includes functionality to estimate the onenorms of a Matrix. The function _oneNormEst_ does this and can be used as an alternative to _norm_ function. _norm_ function runs in O(n^2) time while, _oneNormEst_ takes O(k.N) time. This PR also includes many helper functions such as _absSum_, _maxAlongAxis_, _ones_, _zeros_, _elementaryVector_, _argsort_, _everyColOfXParallelToColOfY_, _signRoundUp_, _columnNeedsResampling_, _columnResample_, _sparseDenseMatmul_, _getDense_ which are all private methods and aid the functionality of _oneNormEst_ method. Besides, this PR incorporates major refactoring of ExpmPadeHelper class, making it modular and readable. This PR also includes documentation wherever required and includes tests for Sparse matrices.
 
 ### Action method and Test
-PR: [#18293] <br>
-(https://github.com/chapel-lang/chapel/pull/18293)
+PR: [#18293](https://github.com/chapel-lang/chapel/pull/18293) <br>
 This PR includes functionality to find the action of a matrix's exponential on a vector or another matrix of rank==2. The method expmv achieves this functionality. 
 ## Miscellaneous
 
